@@ -2,6 +2,10 @@
 
 Run a shell command with `sudo`, popping up a GUI password dialog (`ksshaskpass`) for authentication.
 
+# Install
+
+Refers to [README](README_en_US.md).
+
 ## How it works
 
 ```bash
