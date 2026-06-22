@@ -12,6 +12,10 @@ MCDR 拥有丰富的 社区插件生态。小至计算器、高亮玩家、b 站
 
 > 推荐使用 `webfetch` 工具获取文档内容，或通过 `curl` CLI 工具来访问并自行解析文档。
 
+## 安装此技能
+
+参见[README](README.md)。
+
 ## 接口使用
 
 MCDR 推荐开发者使用 `from mcdreforged.api.all import PluginServerInterface` 这样的方式导入常用的公共接口。如果插件专为 2.15 及以上版本的 MCDReforged 设计的话，还可以直接从 `mcdreforged` 主模块导入。
