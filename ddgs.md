@@ -1,7 +1,13 @@
 # ddgs
+
 Use `ddgs` CLI tool to search the internet. The executable is located in `~/.local/bin` and installed with command `uv tool install <package>`. If could not execute `ddgs`, try to find it and reinstall with uv when it is missing.
 
+# Install
+
+Refers to [README](README_en_US.md).
+
 ## Usage
+
 Use `ddgs text -q <content>` to search for internet informations.
 
 For example, if you want to search what's the latest version of game Minecraft, just execute:
