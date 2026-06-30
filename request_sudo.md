@@ -40,6 +40,14 @@ Generic:
 SUDO_ASKPASS=/usr/bin/ksshaskpass sudo -A sh -c '<multi-word command>'
 ```
 
+Git over SSH authentication can also use `ksshaskpass`:
+```bash
+SSH_ASKPASS=/usr/bin/ksshaskpass SSH_ASKPASS_REQUIRE=force git pull
+```
+
+- This is useful when `ssh` needs a key passphrase during Git operations.
+- `SSH_ASKPASS_REQUIRE=force` makes OpenSSH use the askpass dialog even when a terminal is available.
+
 ## Notes
 
 - Assembles the full command from the user's request — no script wrapper needed.
