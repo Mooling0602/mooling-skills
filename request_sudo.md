@@ -23,6 +23,15 @@ If `ksshaskpass` is not available on the system, try these in order:
 1. `pkexec <command>` — Polkit GUI dialog
 2. Plain `sudo <command>` — terminal prompt (last resort)
 
+Especailly in **NixOS**, the `ksshaskpass` is not in `/usr/bin/` but still avaliable, you should find it using `command -v <cmd>`, like this:
+
+```fish
+mooling@mooling-laptop ~> command -v ksshaskpass
+/etc/profiles/per-user/mooling/bin/ksshaskpass
+```
+
+Then use the correct path.
+
 ## Examples
 
 Install an RPM:
