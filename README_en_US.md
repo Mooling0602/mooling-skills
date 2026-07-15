@@ -6,6 +6,8 @@ AI Agent skill documentation for my personal use.
 
 Except for README*.md, each `*.md` file represents a skill. You can ask the AI agent to convert it into formats usable by various CLI tools.
 
+After installation, you can remove the "Install" part of content in the skill file, because you have converted it to correct format. You can save the source URL to update it from GitHub again.
+
 # For AI Agents
 
 You need to convert the skill document into the correct format, rather than just copying and pasting the source file.
