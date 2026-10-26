@@ -1,5 +1,7 @@
 # mooling-skills
 
+[English](README_en_US.md) | 中文
+
 个人使用的 AI Agent 技能集合，遵循 [Agent Skills](https://agentskills.io/specification) 开放规范。
 
 # 结构
