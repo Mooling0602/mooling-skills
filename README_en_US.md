@@ -63,3 +63,8 @@ description: One sentence on what the skill does and when it should be used.
 The body is the full instruction the model reads once the skill activates. Keep it under roughly 5000 tokens and push bulky reference material into `references/` to be read on demand.
 
 After installation, you can remove the "Install" part of content in the skill file, because you have converted it to correct format. You can save the source URL in the frontmatter `metadata.source` field to update it from GitHub again.
+
+---
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)

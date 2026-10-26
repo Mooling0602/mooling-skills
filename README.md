@@ -63,3 +63,8 @@ description: 一句话说明这个技能做什么，以及在什么情况下该�
 正文是模型在技能被激活后读到的完整指令。建议控制在 5000 token 以内，把大段参考材料拆到 `references/` 中按需读取。
 
 安装后的技能文件可以去除其中的「安装」部分内容，因为已经完成了格式转换。另外可以在 frontmatter 的 `metadata.source` 中保留技能文件的源 URL，方便再次从 GitHub 读取并更新。
+
+---
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
