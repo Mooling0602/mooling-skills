@@ -59,3 +59,5 @@ description: One sentence on what the skill does and when it should be used.
 - `description` goes straight into the model's skill catalog and decides whether the skill triggers. Writing *when to use it* matters more than writing *what it is*.
 
 The body is the full instruction the model reads once the skill activates. Keep it under roughly 5000 tokens and push bulky reference material into `references/` to be read on demand.
+
+After installation, you can remove the "Install" part of content in the skill file, because you have converted it to correct format. You can save the source URL in the frontmatter `metadata.source` field to update it from GitHub again.
