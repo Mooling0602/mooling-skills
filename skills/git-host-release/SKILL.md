@@ -29,6 +29,8 @@ Examples: GitHub, Gitea (including self-hosted instances), Gitee, GitLab.
 
 Put CI configuration and scripts under a `.<host>/` directory at the repository root, such as `.github/` or `.gitea/`.
 
+That layout belongs to GitHub and Gitea. Other providers dictate their own places: GitLab reads `.gitlab-ci.yml` from the repository root and cannot be given a `.gitlab/` directory in this shape. Check the provider's documentation before assuming the skeleton below carries over.
+
 Taking GitHub as the example, a complete CI skeleton looks like this:
 
 ```sh
@@ -75,16 +77,18 @@ Make the version number the last thing changed, and give it a commit of its own:
 release: v0.1.0
 ```
 
+Keep the `v` prefix everywhere the version appears: the release commit message, the tag, and the `CHANGELOG.md` heading. With one spelling throughout, scripts never have to add or strip it.
+
 Record the seven-character short hash of that commit, shown here as `hash123`, and create the version tag with `commit <hash>` as its message:
 
 ```sh
-git tag -a 0.1.0 -m "commit hash123"
+git tag -a v0.1.0 -m "commit hash123"
 ```
 
-Push the branch and the tag together:
+Push the branch and the tag together, naming the tag by its full ref so it cannot be confused with a branch of the same name:
 
 ```sh
-git push origin main 0.1.0
+git push origin main refs/tags/v0.1.0
 ```
 
 Create the release commit and the tag on the main branch (usually `main`) so the version history stays linear.
@@ -112,10 +116,16 @@ A version section may override the defaults by declaring H3-level `Header` or `E
 `**full_changelog!**` is a placeholder tag, not final content. Convert it into a real `Full Changelog` link, for example:
 
 ```markdown
-**Full Changelog**: https://github.com/Username/repository/compare/0.1.0...0.2.0
+**Full Changelog**: https://github.com/Username/repository/compare/v0.1.0...v0.2.0
 ```
 
 Do not copy that URL. Calculate it with a script in the CI action.
+
+The first release has no previous version to compare against, so it gets no compare link. A single-ref form such as `compare/v0.1.0` resolves to "from that tag to the default branch", which quietly changes as the repository moves on. Point the first version's entry at the tag or release page instead:
+
+```markdown
+**Full Changelog**: https://github.com/Username/repository/releases/tag/v0.1.0
+```
 
 ### Commit hashes
 
