@@ -13,7 +13,7 @@ The H2 level title is the single version's release title. It should be prefixed 
 
 - Add new features
 
-**Full Changelog**: https://github.com/Username/repository/compare/0.1.0...0.2.0
+**Full Changelog**: https://github.com/Username/repository/compare/v0.1.0...v0.2.0
 
 ## v0.1.0
 
@@ -24,4 +24,4 @@ The H2 level title is the single version's release title. It should be prefixed 
 
 - Fix some bugs
 
-**Full Changelog**: https://github.com/Username/repository/compare/0.1.0
+**Full Changelog**: https://github.com/Username/repository/releases/tag/v0.1.0

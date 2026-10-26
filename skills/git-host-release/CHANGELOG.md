@@ -9,7 +9,7 @@ For CI, Add `Header` or `Endfix` section to every version's release note, do not
 For example, the content of `**full_changelog!**` is:
 
 ```markdown
-**Full Changelog**: https://github.com/Username/repository/compare/0.1.0...0.2.0
+**Full Changelog**: https://github.com/Username/repository/compare/v0.1.0...v0.2.0
 ```
 
 > Do not copy this! Caculate it with scripts automatically in CI actions.
