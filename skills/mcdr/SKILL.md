@@ -1,3 +1,13 @@
+---
+name: mcdr
+description: >
+  MCDReforged（MCDR）Minecraft 服务端管理工具的开发指南。编写、调试、测试 MCDR 插件，
+  以及检查插件翻译（lang 目录、rtr 翻译接口、中英文 yml 对应关系）时使用。
+  适用于用户提到 MCDReforged、MCDR 插件、mcdreforged.plugin.json、PluginServerInterface 的场景。
+metadata:
+  source: https://github.com/Mooling0602/mooling-skills/tree/main/skills/mcdr
+---
+
 # 关于 MCDReforged
 
 MCDReforged (MCDR, 下同) 是一个管理 Minecraft 服务器的工具，拥有自定义插件系统。完全无需修改 Minecraft 服务器本身。
@@ -11,10 +21,6 @@ MCDR 拥有丰富的 社区插件生态。小至计算器、高亮玩家、b 站
 关于更多信息，你需要查看此[官方文档](https://docs.mcdreforged.com/zh-cn/latest/index.html)。
 
 > 推荐使用 `webfetch` 工具获取文档内容，或通过 `curl` CLI 工具来访问并自行解析文档。
-
-## 安装此技能
-
-参见[README](README.md)。
 
 ## 接口使用
 

@@ -1,10 +1,13 @@
+---
+name: request-sudo
+description: Run a shell command with root privileges through a GUI password dialog (ksshaskpass with sudo -A) when no interactive terminal is available to type a password. Use for nixos-rebuild, systemctl, package installation, or any elevated command in a GUI-only session; falls back to pkexec then plain sudo.
+metadata:
+  source: https://github.com/Mooling0602/mooling-skills/tree/main/skills/request-sudo
+---
+
 # request_sudo
 
 Run a shell command with `sudo`, popping up a GUI password dialog (`ksshaskpass`) for authentication.
-
-# Install
-
-Refers to [README](README_en_US.md).
 
 ## How it works
 

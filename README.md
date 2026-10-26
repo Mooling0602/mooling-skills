@@ -1,15 +1,61 @@
 # mooling-skills
 
-个人使用的 AI Agent 技能文档。
+个人使用的 AI Agent 技能集合，遵循 [Agent Skills](https://agentskills.io/specification) 开放规范。
 
-# 用法
+# 结构
 
-除 README*.md 外，每个 `*.md` 文件代表一个 skill。你可以让 AI 代理帮助转换成各种 CLI 工具可用的格式。
+```
+skills/
+├── ddgs/SKILL.md           # 联网搜索
+├── mcdr/SKILL.md           # MCDReforged 插件开发
+└── request-sudo/SKILL.md   # GUI 密码框提权
+```
 
-# 对于 AI 代理
+每个技能是 `skills/` 下的一个目录，目录名即技能名（kebab-case），内含一份带 YAML frontmatter 的 `SKILL.md`。技能需要附带脚本、参考文档或资源文件时，放在同目录下的 `scripts/`、`references/`、`assets/` 中。
 
-你需要将技能文档转换为正确的格式，而不是仅仅复制粘贴源文件。
+# 安装
 
-通常情况下，你应该创建一个以技能名称为名字的目录，并将技能文档重命名为 SKILL.md 并放到这个目录下。
+## skills CLI
 
-不同工具管理 skill 的方式不同，你应该灵活处理。
+```sh
+npx skills add Mooling0602/mooling-skills
+```
+
+加 `--skill <名称>` 只装指定技能，加 `-g` 装到用户级目录而非当前项目。用 `--list` 可以先看清单再决定。
+
+## 直接复制
+
+技能本身就是完整目录，把需要的技能目录拷进对应工具的 skills 目录即可：
+
+```sh
+git clone https://github.com/Mooling0602/mooling-skills
+cp -r mooling-skills/skills/ddgs ~/.dsh/skills/
+```
+
+常见工具的 skills 目录：
+
+| 工具 | 用户级路径 |
+| --- | --- |
+| DeepSeek Harness | `~/.dsh/skills/` |
+| Claude Code | `~/.claude/skills/` |
+| Codex / OpenCode / Cursor 等 | `~/.agents/skills/` |
+
+## 对本仓库内的技能
+
+如果项目与 `skills/` 目录同级，也可以通过项目的 `.dsh/skills` 或 `.agents/skills` 软链接引入，改动会实时生效。
+
+# 编写技能
+
+`SKILL.md` 的 frontmatter 至少要包含两个字段：
+
+```yaml
+---
+name: my-skill
+description: 一句话说明这个技能做什么，以及在什么情况下该使用它。
+---
+```
+
+- `name` 只能是小写字母、数字和连字符，不能以连字符开头或结尾，且必须与所在目录同名。
+- `description` 会直接进入模型的技能目录，用于判断是否触发该技能。写清楚「什么时候用」比写「是什么」更重要。
+
+正文是模型在技能被激活后读到的完整指令。建议控制在 5000 token 以内，把大段参考材料拆到 `references/` 中按需读取。

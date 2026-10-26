@@ -1,10 +1,13 @@
+---
+name: ddgs
+description: Search the internet for real-time information with the ddgs CLI — latest versions, news, docs, current events, and any other lookup that needs live web results. Use when a question cannot be answered from local files or prior knowledge, or when the user says to search / check online.
+metadata:
+  source: https://github.com/Mooling0602/mooling-skills/tree/main/skills/ddgs
+---
+
 # ddgs
 
 Use `ddgs` CLI tool to search the internet. The executable is located in `~/.local/bin` and installed with command `uv tool install <package>`. If could not execute `ddgs`, try to find it and reinstall with uv when it is missing.
-
-# Install
-
-Refers to [README](README_en_US.md).
 
 ## Usage
 
