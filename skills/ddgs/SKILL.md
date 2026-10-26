@@ -7,7 +7,7 @@ metadata:
 
 # ddgs
 
-Use `ddgs` CLI tool to search the internet. The executable is located in `~/.local/bin` and installed with command `uv tool install <package>`. If could not execute `ddgs`, try to find it and reinstall with uv when it is missing.
+Use `ddgs` CLI tool to search the internet. The executable is located in `~/.local/bin` and installed with `uv tool install ddgs`. If `ddgs` cannot be executed, look for it first; reinstall it with `uv tool install ddgs` when it is missing.
 
 ## Usage
 
